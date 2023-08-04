@@ -1,0 +1,1 @@
+Click <a href="http://localhost:4200/actualizarpass/{{ $token }}">here </a> to reset your password!

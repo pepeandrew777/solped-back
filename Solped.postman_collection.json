@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "22a72925-5425-4a74-a75e-9c9fc40018e0",
+		"name": "Solped",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9911355"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\":\"yanaa\",\n    \"password\":\"Y1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/login",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FormularioSolpe",
+			"item": [
+				{
+					"name": "Verificar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"n_solped_sap\":45644,\n  \"n_necesidad\":322,\n  \"n_control_presupuestario\":7433  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/formulario-solped-verificar/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"formulario-solped-verificar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rechazar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"obs\":\"REVISAR TODO EL PROCESO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/formulario-solped-rechazar/3",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"formulario-solped-rechazar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/formulario-solped-eliminar/3",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"formulario-solped-eliminar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerOrdenes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/ordenes/15",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"ordenes",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerFormulario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/formulario-solped/3",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"formulario-solped",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orden",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"v_orden_interna\":\"STRSP02023\",\n \"v_descripcion\":\"MAC MacBook Pro\",\n \"n_id_gerencia\":4,\n \"n_id_departamento\":19,\n \"n_pos_pres\":34543,\n \"v_descripcion_pos\":\"EQUIPAMIENTO\"   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/orden",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"orden"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"v_orden_interna\":\"STRSP02023\",\n \"v_descripcion\":\"MAC MacBook Pro 2023\",\n \"n_id_gerencia\":4,\n \"n_id_departamento\":19,\n \"n_pos_pres\":34543,\n \"v_descripcion_pos\":\"EQUIPAMIENTO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/orden/175",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"orden",
+								"175"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/orden",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"orden"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/orden/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"orden",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ObsSolpe",
+			"item": [
+				{
+					"name": "Listado",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/obs",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"obs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/obs/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"obs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"v_campo\":\"n_fondo\",\n \"v_obs\":\"NUMERO NO EXISTENTE DE CONTABILIDAD\",\n \"n_id_formulario\":9,\n \"n_id_solped\":1   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/obs",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"obs"
+							]
+						},
+						"description": "El campo \"v_campo\" tiene estos valores relacionados con sus ids de obs creados(en la tabla solped):\n\nn_fondo n_id_n_fondo_obs  \nn_centro_costo n_id_n_centro_costo_obs  \nv_orden n_id_v_orden_obs  \nv_posicion_pres n_id_v_posicion_pres_obs  \nv_cod_mat_almacen n_id_v_cod_mat_almacen_obs  \nv_descripcion n_id_v_descripcion_obs  \nn_cantidad n_id_n_cantidad_obs  \nv_unidad n_id_v_unidad_obs  \nn_precio_unitario n_id_n_precio_unitario_obs  \nn_moneda n_id_n_moneda_obs  \nn_id_n_id_ceco_obs n_id_n_precio_total_obs  \nn_id_ceco n_id_n_id_ceco_obs  \nLas columnas de la izquierda con sufijo _obs son los ids de las observaciones creadas y se estan null significa que no existe observacion de un determinado campo, si no es null quiere decir que esta observado ese campo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n \"v_obs\":\"NUMERO NO EXISTENTE EN SAP 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{solped}}/api/obs/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"obs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/obs/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"obs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solped",
+			"item": [
+				{
+					"name": "Ver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{solped}}/api/solped/1",
+							"host": [
+								"{{solped}}"
+							],
+							"path": [
+								"api",
+								"solped",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
